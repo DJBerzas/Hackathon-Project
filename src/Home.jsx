@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Button from "./Button.jsx";
 import "./Home.css"; // Only import this for the Home page
 
 function Home() {
@@ -51,9 +50,11 @@ function Home() {
     }, []);
 
     return (
-        <div>
-            <h1 className='test'>Welcome to Home Page</h1>
-            <div className="navbar">
+        <div className='home-page'>
+            
+            <div className = 'home-container'>
+
+            <h1 className='home-title'>Welcome to Home Page</h1>
                 <button onClick={goToFacility}>See Facilities</button>
                 <button onClick={goToHealthProfessional}>See Healthcare Professionals</button>
                 <button onClick={goToSeeEvent}>See Events</button>
