@@ -1,6 +1,6 @@
 import Button from "./Button.jsx";
 
-function CalandarPage() {
+function CalandarAndTime() {
     return (
         <div>
             <h1>Welcome to Calandar Page</h1>
@@ -12,4 +12,4 @@ function CalandarPage() {
     );
 }
 
-export default CalandarPage;
+export default CalandarAndTime;
