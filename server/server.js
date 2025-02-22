@@ -5,29 +5,49 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-let dataArray = []; 
+let dataArray = [];
+let sportsFacilityTimes = [2, 4, 8];
+let inputDate = [];
+let dateArray = [];
 
-app.post("/addData", (req, res) => {
-    newData = req.body.data; // Store received array
-    console.log("Updated Data Array:", dataArray);
-    dataArray.push(newData)
-    res.json(dataArray); // Send back full array
+
+
+
+
+
+// ✅ Add a new date to the backend
+app.post("/addDate", (req, res) => {
+    const { date } = req.body;
+
+    if (!date || !date.month || !date.day || !date.year) {
+        return res.status(400).json({ error: "Invalid date format" });
+    }
+
+    // Push new date object to array
+    inputDate.push({ date });
+
+    console.log("Updated Date Array:", inputDate);
+    res.json(inputDate); // Return updated array
 });
+
+// ✅ Get all stored dates
+app.get("/getDates", (req, res) => {
+    res.json(inputDate);
+});
+
 
 app.post("/deleteData", (req, res) => {
-    dataArray = []; // Clear array
+    dataArray = [];
     console.log("Data Array Cleared:", dataArray);
-    res.json(dataArray); // Send back empty array
+    res.json(dataArray);
 });
 
-app.get("/", (req, res) => {
-    res.json({ fruits: ["Apple", "Banana", "Cherry"] }); // Example GET response
+// ✅ Handle sports facility times
+app.get("/getSportsFacilityTimes", (req, res) => {
+    res.json(sportsFacilityTimes.map(Number)); // Ensure numbers
 });
 
+// ✅ Start the server
 app.listen(5000, () => {
     console.log("Server running on port 5000");
 });
-app.get("/getData", (req, res) => {
-    res.json(dataArray); // Send the stored test data
-});
-
