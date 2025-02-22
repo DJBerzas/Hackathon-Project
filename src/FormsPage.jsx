@@ -1,12 +1,14 @@
 import Button from "./Button.jsx";
 
-function HealthProfessional() {
+function FormsPage() {
     return (
         <div>
-            <h1>Welcome to Prof</h1>
+            <h1>Welcome to Forms Page</h1>
             <Button name="Go to Home" to="/" />
+
         </div>
     );
 }
 
-export default HealthProfessional;
+export default FormsPage;
+
