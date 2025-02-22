@@ -8,12 +8,20 @@ import SeeEvent from "./SeeEvent.jsx"
 
 function Home() {
     return (
-        <div>
-            <h1>Welcome to Home Page</h1>
-            <Button name="Go to Facility" to="/Facility" />
-            <Button name="Go to HealthProfessional" to="/HealthProfessional" />
-            <Button name="See Events" to="/SeeEvent" />
-        </div>
+        <body>
+                
+            
+            <div>
+                <h1 class = 'test'>Welcome to Home Page</h1>
+                <div class="navbar">
+                    <Button name="Go to Facility" to="/Facility" />
+                    <Button name="Go to HealthProfessional" to="/HealthProfessional" />
+                    <Button name="See Events" to="/SeeEvent" />
+                </div>
+            </div>
+        
+                
+        </body>
     );
 }
 
