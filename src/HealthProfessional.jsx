@@ -1,8 +1,7 @@
-import Button from "./Button.jsx";
-import { useNavigate } from "react-router-dom" 
+import { useNavigate } from "react-router-dom";
+import "./HealthProfessional.css";  // Import styles for this page
 
 function HealthProfessional() {
-
     const navigate = useNavigate();
 
     const goToCalendarFPT = () => {
@@ -11,7 +10,7 @@ function HealthProfessional() {
     const goToCalendarFR = () => {
       navigate("/CalandarAndTime", { state: { message: "Recovery" } });
     };
-    const goToCalendarFMH= () => {
+    const goToCalendarFMH = () => {
       navigate("/CalandarAndTime", { state: { message: "MentalHealth" } });
     };
     const goToHome = () => {
@@ -19,12 +18,14 @@ function HealthProfessional() {
     };
 
     return (
-        <div>
-            <h1>Welcome to Health Prof</h1>
-            <button onClick={goToHome}>Home</button>
-            <button onClick={goToCalendarFPT}>Go to PT</button>
-            <button onClick={goToCalendarFR}>Go to Recovery</button>
-            <button onClick={goToCalendarFMH}>Go to Mental Health</button> 
+        <div className="health-professional-page">
+            <div className="health-professional-container">
+                <h1 className="health-professional-title">Welcome to Health Professional</h1>
+                <button onClick={goToHome} className="nav-button">Home</button>
+                <button onClick={goToCalendarFPT} className="nav-button">Go to PT</button>
+                <button onClick={goToCalendarFR} className="nav-button">Go to Recovery</button>
+                <button onClick={goToCalendarFMH} className="nav-button">Go to Mental Health</button>
+            </div>
         </div>
     );
 }

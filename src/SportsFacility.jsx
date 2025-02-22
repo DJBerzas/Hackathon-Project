@@ -14,26 +14,26 @@ function SportsFacility() {
 
     // Array of facilities with detailed information
     const facilities = [
-        { name: "Building 1", capacity: 500, location: "Main Campus", type: "Indoor", equipment: "Gym, Pool" },
-        { name: "Building 2", capacity: 300, location: "North Campus", type: "Outdoor", equipment: "Track, Field" },
-        { name: "Building 3", capacity: 700, location: "South Campus", type: "Indoor", equipment: "Gym, Basketball Court" },
-        { name: "Building 4", capacity: 1000, location: "East Campus", type: "Outdoor", equipment: "Stadium" },
-        { name: "Building 5", capacity: 450, location: "West Campus", type: "Indoor", equipment: "Gym" },
-        { name: "Building 6", capacity: 850, location: "Main Campus", type: "Indoor", equipment: "Gym, Pool, Sauna" },
-        { name: "Building 7", capacity: 400, location: "North Campus", type: "Outdoor", equipment: "Track" },
-        { name: "Building 8", capacity: 1200, location: "East Campus", type: "Indoor", equipment: "Sports Complex" },
-        { name: "Building 9", capacity: 600, location: "South Campus", type: "Outdoor", equipment: "Field" },
-        { name: "Building 10", capacity: 950, location: "Main Campus", type: "Indoor", equipment: "Gym, Pool" },
-        { name: "Building 11", capacity: 550, location: "West Campus", type: "Indoor", equipment: "Gym, Sauna" },
-        { name: "Building 12", capacity: 300, location: "North Campus", type: "Outdoor", equipment: "Track, Field" },
-        { name: "Building 13", capacity: 800, location: "South Campus", type: "Indoor", equipment: "Gym, Basketball Court" },
-        { name: "Building 14", capacity: 1100, location: "East Campus", type: "Indoor", equipment: "Sports Complex, Sauna" },
-        { name: "Building 15", capacity: 650, location: "Main Campus", type: "Outdoor", equipment: "Track, Field" },
-        { name: "Building 16", capacity: 1200, location: "West Campus", type: "Indoor", equipment: "Gym, Pool" },
-        { name: "Building 17", capacity: 450, location: "North Campus", type: "Outdoor", equipment: "Track" },
-        { name: "Building 18", capacity: 500, location: "South Campus", type: "Indoor", equipment: "Gym, Basketball Court" },
-        { name: "Building 19", capacity: 750, location: "Main Campus", type: "Outdoor", equipment: "Stadium" },
-        { name: "Building 20", capacity: 900, location: "East Campus", type: "Indoor", equipment: "Gym, Pool" }
+        { name: "Facility 1", capacity: 500, location: "Main Campus", type: "Indoor", equipment: "Gym, Pool" },
+        { name: "Facility 2", capacity: 300, location: "North Campus", type: "Outdoor", equipment: "Track, Field" },
+        { name: "Facility 3", capacity: 700, location: "South Campus", type: "Indoor", equipment: "Gym, Basketball Court" },
+        { name: "Facility 4", capacity: 1000, location: "East Campus", type: "Outdoor", equipment: "Stadium" },
+        { name: "Facility 5", capacity: 450, location: "West Campus", type: "Indoor", equipment: "Gym" },
+        { name: "Facility 6", capacity: 850, location: "Main Campus", type: "Indoor", equipment: "Gym, Pool, Sauna" },
+        { name: "Facility 7", capacity: 400, location: "North Campus", type: "Outdoor", equipment: "Track" },
+        { name: "Facility 8", capacity: 1200, location: "East Campus", type: "Indoor", equipment: "Sports Complex" },
+        { name: "Facility 9", capacity: 600, location: "South Campus", type: "Outdoor", equipment: "Field" },
+        { name: "Facility 10", capacity: 950, location: "Main Campus", type: "Indoor", equipment: "Gym, Pool" },
+        { name: "Facility 11", capacity: 550, location: "West Campus", type: "Indoor", equipment: "Gym, Sauna" },
+        { name: "Facility 12", capacity: 300, location: "North Campus", type: "Outdoor", equipment: "Track, Field" },
+        { name: "Facility 13", capacity: 800, location: "South Campus", type: "Indoor", equipment: "Gym, Basketball Court" },
+        { name: "Facility 14", capacity: 1100, location: "East Campus", type: "Indoor", equipment: "Sports Complex, Sauna" },
+        { name: "Facility 15", capacity: 650, location: "Main Campus", type: "Outdoor", equipment: "Track, Field" },
+        { name: "Facility 16", capacity: 1200, location: "West Campus", type: "Indoor", equipment: "Gym, Pool" },
+        { name: "Facility 17", capacity: 450, location: "North Campus", type: "Outdoor", equipment: "Track" },
+        { name: "Facility 18", capacity: 500, location: "South Campus", type: "Indoor", equipment: "Gym, Basketball Court" },
+        { name: "Facility 19", capacity: 750, location: "Main Campus", type: "Outdoor", equipment: "Stadium" },
+        { name: "Facility 20", capacity: 900, location: "East Campus", type: "Indoor", equipment: "Gym, Pool" }
     ];
 
     return (

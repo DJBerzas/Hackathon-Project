@@ -6,7 +6,7 @@ html, body {
     color: #D3C6AA; /* Default foreground */
 }
 
-.sports-facility {
+.mentalhealth-page {
     font-family: Arial, sans-serif;
     padding: 20px;
     background-color: #2D353B; /* Default background */
@@ -14,12 +14,14 @@ html, body {
     text-align: center;
 }
 
-h1 {
-    color: #DBBC7F; /* Light gray-yellow for the heading */
+.mentalhealth-title {
+    color: #DBBC7F; /* Light gray-yellow for the title */
+    font-size: 28px;
+    margin-bottom: 20px;
 }
 
 /* Home Button */
-.home-button {
+.mentalhealth-home-button {
     background-color: #343F44; /* Darker gray for the button */
     color: #D3C6AA; /* Default foreground */
     padding: 10px 20px;
@@ -30,12 +32,12 @@ h1 {
     font-size: 16px;
 }
 
-.home-button:hover {
+.mentalhealth-home-button:hover {
     background-color: #4D4C43; /* Slightly darker gray for hover */
 }
 
-/* Facility List */
-.facility-list {
+/* Mental Health List */
+.mentalhealth-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
@@ -43,8 +45,8 @@ h1 {
     list-style-type: none;
 }
 
-/* Facility Box */
-.facility-box {
+/* Mental Health Box */
+.mentalhealth-box {
     background-color: #343F44; /* Dark gray background */
     border: 1px solid #4F585E; /* Lighter gray border */
     border-radius: 10px;
@@ -57,18 +59,18 @@ h1 {
     justify-content: flex-start;
 }
 
-.facility-box:hover {
+.mentalhealth-box:hover {
     transform: scale(1.05);
 }
 
-/* Facility Details */
-.facility-details {
+/* Mental Health Details */
+.mentalhealth-details {
     margin-bottom: 20px;
     text-align: left;
     width: 100%;
 }
 
-.facility-name {
+.professional-name {
     font-size: 18px;
     font-weight: bold;
     color: #D3C6AA; /* Default foreground for the name */
@@ -76,10 +78,10 @@ h1 {
 }
 
 /* Ensure each field is on a new line */
-.facility-capacity,
-.facility-location,
-.facility-type,
-.facility-equipment {
+.professional-specialty,
+.professional-location,
+.professional-availability,
+.professional-method {
     font-size: 14px;
     color: #859289; /* Comments and punctuation delimiters color */
     margin-top: 5px;

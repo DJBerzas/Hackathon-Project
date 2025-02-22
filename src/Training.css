@@ -1,12 +1,12 @@
 /* General Styles */
-html, body {
+.training-container {
     height: 100%;
     margin: 0;
     background-color: #232A2E; /* Dimmed background */
     color: #D3C6AA; /* Default foreground */
 }
 
-.sports-facility {
+.training-room {
     font-family: Arial, sans-serif;
     padding: 20px;
     background-color: #2D353B; /* Default background */
@@ -34,8 +34,8 @@ h1 {
     background-color: #4D4C43; /* Slightly darker gray for hover */
 }
 
-/* Facility List */
-.facility-list {
+/* Room List */
+.room-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
@@ -43,8 +43,8 @@ h1 {
     list-style-type: none;
 }
 
-/* Facility Box */
-.facility-box {
+/* Room Card */
+.room-card {
     background-color: #343F44; /* Dark gray background */
     border: 1px solid #4F585E; /* Lighter gray border */
     border-radius: 10px;
@@ -57,18 +57,18 @@ h1 {
     justify-content: flex-start;
 }
 
-.facility-box:hover {
+.room-card:hover {
     transform: scale(1.05);
 }
 
-/* Facility Details */
-.facility-details {
+/* Room Details */
+.room-details {
     margin-bottom: 20px;
     text-align: left;
     width: 100%;
 }
 
-.facility-name {
+.room-name {
     font-size: 18px;
     font-weight: bold;
     color: #D3C6AA; /* Default foreground for the name */
@@ -76,10 +76,10 @@ h1 {
 }
 
 /* Ensure each field is on a new line */
-.facility-capacity,
-.facility-location,
-.facility-type,
-.facility-equipment {
+.room-capacity,
+.room-location,
+.room-type,
+.room-equipment {
     font-size: 14px;
     color: #859289; /* Comments and punctuation delimiters color */
     margin-top: 5px;

@@ -55,11 +55,11 @@ function Home() {
             <div className = 'home-container'>
 
             <h1 className='home-title'>Welcome to Home Page</h1>
-                <button onClick={goToFacility}>See Facilities</button>
-                <button onClick={goToHealthProfessional}>See Healthcare Professionals</button>
-                <button onClick={goToSeeEvent}>See Events</button>
-                <button onClick={addTestData}>Add Test Data</button>
-                <button onClick={deleteTestData}>Delete Test Data</button>
+                <button onClick={goToFacility} className="nav-button">See Facilities</button>
+                <button onClick={goToHealthProfessional}className="nav-button">See Healthcare Professionals</button>
+                <button onClick={goToSeeEvent}className="nav-button">See Events</button>
+                <button onClick={addTestData}className="nav-button">Add Test Data</button>
+                <button onClick={deleteTestData}className="nav-button">Delete Test Data</button>
             </div>
         </div>
     );

@@ -1,5 +1,5 @@
-import Button from "./Button.jsx";
-import { useNavigate } from "react-router-dom"   
+import { useNavigate } from "react-router-dom";
+import "./Facility.css"; // Import the Facility-specific CSS
 
 function Facility() {
     const navigate = useNavigate();
@@ -16,15 +16,18 @@ function Facility() {
     const goToHome = () => {
       navigate("/");
     };
-    return (
-        <div>
-            <h1>Welcome to Facility</h1>
-            
-            <button onClick={goToHome}>Home</button>
-            <button onClick={goToCalendarFB}>Go to Building</button>
-            <button onClick={goToCalendarFT}>Go to Training</button>
-            <button onClick={goToCalendarFSF}>Go to Sports Facility</button>
 
+    return (
+        <div className="facility-page">
+            <div className="facility-container">
+                <h1 className="facility-title">Welcome to Facility</h1>
+                <div className="button-container">
+                    <button className="facility-button" onClick={goToHome}>Home</button>
+                    <button className="facility-button" onClick={goToCalendarFB}>Go to Building</button>
+                    <button className="facility-button" onClick={goToCalendarFT}>Go to Training</button>
+                    <button className="facility-button" onClick={goToCalendarFSF}>Go to Sports Facility</button>
+                </div>
+            </div>
         </div>
     );
 }

@@ -1,14 +1,9 @@
-/* Home Page Styles */
-html, body {
-    height: 100%;  /* Make sure the page takes full height */
+/* Facility Page Styles */
+.facility-page {
+    height: 100vh;  /* Full viewport height */
     margin: 0;
-}
-
-.home-page {
-    height: 100vh;  /* Use the full viewport height */
-    margin: 0;
-    background-color: #232A2E; 
-    color: #D3C6AA; 
+    background-color: #232A2E;
+    color: #D3C6AA;
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -20,8 +15,8 @@ html, body {
     background-attachment: fixed;
 }
 
-/* Home Container */
-.home-container {
+/* Facility Container */
+.facility-container {
     text-align: center;
     padding: 50px;
     background-color: rgba(45, 53, 59, 0.6); /* Transparent background */
@@ -36,14 +31,14 @@ html, body {
 }
 
 /* Title */
-.home-title {
+.facility-title {
     font-size: 26px;
     color: #DBBC7F; /* Warm yellowish text */
     margin-bottom: 10px;
 }
 
 /* Navigation Buttons */
-.nav-button {
+.facility-button {
     background-color: #3D484D; /* Dark grey */
     color: #D3C6AA;
     padding: 18px 35px; /* Adjusted padding */
@@ -57,7 +52,7 @@ html, body {
     margin: 10px 0; /* More spacing between buttons */
 }
 
-.nav-button:hover {
+.facility-button:hover {
     background-color: #4D4C43; /* Slightly lighter on hover */
     transform: scale(1.08);
 }
