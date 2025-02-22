@@ -16,14 +16,8 @@ import Recovery from './Recovery.jsx'
 import MentalHealth from './MentalHealth.jsx'
 
 function App() {
-    const [count,setCount] = useState(0);
-    const fetchAPI = async () =>{
-        const response = await axios.get('http://localhost:5000/')
-        console.log(response.data.fruits)
-    };
-    useEffect (()=>{
-        fetchAPI();
-    });
+   
+
     return (
         <Router>
             <Routes>

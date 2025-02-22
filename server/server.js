@@ -1,25 +1,33 @@
-const express = require('express');
-const app = express()
-require('dotenv').config();
+const express = require("express");
 const cors = require("cors");
-const corsOptions ={
-    origin:("http://localhost:5000")
-}
 
-app.use(cors(corsOptions))
-
-const PORT = process.env.PORT || 5000;
-
-// Middleware
-app.use(cors());
+const app = express();
 app.use(express.json());
+app.use(cors());
 
-// Test route
-app.get('/', (req, res) => {
-    res.send({ fruits: ['apple','orange']});
+let dataArray = []; 
+
+app.post("/addData", (req, res) => {
+    newData = req.body.data; // Store received array
+    console.log("Updated Data Array:", dataArray);
+    dataArray.push(newData)
+    res.json(dataArray); // Send back full array
 });
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+app.post("/deleteData", (req, res) => {
+    dataArray = []; // Clear array
+    console.log("Data Array Cleared:", dataArray);
+    res.json(dataArray); // Send back empty array
 });
+
+app.get("/", (req, res) => {
+    res.json({ fruits: ["Apple", "Banana", "Cherry"] }); // Example GET response
+});
+
+app.listen(5000, () => {
+    console.log("Server running on port 5000");
+});
+app.get("/getData", (req, res) => {
+    res.json(dataArray); // Send the stored test data
+});
+
