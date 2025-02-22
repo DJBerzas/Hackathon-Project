@@ -1,12 +1,19 @@
 import Button from "./Button.jsx";
-
+import { useNavigate } from "react-router-dom"   
 function Rooms() {
+    const navigate = useNavigate();
+
+    const goToForms= () => {
+      navigate("/FormsPage", { state: { message: "Building" } });
+    };
+    const goToHome = () => {
+        navigate("/", { state: { message: "Building" } });
+      };
     return (
         <div>
             <h1>Welcome to Rooms</h1>
-            <Button name="Go to Home" to="/" />
-
-            <Button name="Go to Forms" to="/FormsPage" />
+            <button onClick={goToHome}>Home</button>
+            <button onClick={goToForms}>To Form</button>
         </div>
     );
 }

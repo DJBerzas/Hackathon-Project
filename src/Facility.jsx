@@ -2,7 +2,7 @@ import Button from "./Button.jsx";
 import { useNavigate } from "react-router-dom"   
 
 function Facility() {
-    const navigate = useNavigate(); // ✅ Get the navigate function
+    const navigate = useNavigate();
 
     const goToCalendarFB = () => {
       navigate("/CalandarAndTime", { state: { message: "Building" } });
@@ -13,12 +13,14 @@ function Facility() {
     const goToCalendarFSF = () => {
       navigate("/CalandarAndTime", { state: { message: "SportsFacility" } });
     };
-
+    const goToHome = () => {
+      navigate("/");
+    };
     return (
         <div>
             <h1>Welcome to Facility</h1>
             
-            <Button name="Go to Home" to="/" />
+            <button onClick={goToHome}>Home</button>
             <button onClick={goToCalendarFB}>Go to Building</button>
             <button onClick={goToCalendarFT}>Go to Training</button>
             <button onClick={goToCalendarFSF}>Go to Sports Facility</button>

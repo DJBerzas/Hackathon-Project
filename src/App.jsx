@@ -9,6 +9,9 @@ import Rooms from "./Rooms.jsx";
 import SportsFacility from "./SportsFacility.jsx";
 import Training from "./Training.jsx";
 import FormsPage from "./FormsPage.jsx";
+import PT from "./PT.jsx";
+import Recovery from './Recovery.jsx'
+import MentalHealth from './MentalHealth.jsx'
 
 function App() {
     return (
@@ -23,6 +26,9 @@ function App() {
                 <Route path="/SportsFacility" element={<SportsFacility />} />
                 <Route path="/Buildings" element={<Buildings />} />
                 <Route path="/Rooms" element={<Rooms />} />
+                <Route path="/PT" element={<PT/>} />
+                <Route path="/Recovery" element={<Recovery/>} />
+                <Route path="/MentalHealth" element={<MentalHealth/>} />
                 <Route path="/FormsPage" element={<FormsPage />} />
             </Routes>
         </Router>
