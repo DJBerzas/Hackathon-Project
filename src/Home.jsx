@@ -10,44 +10,9 @@ function Home() {
     const goToHealthProfessional = () => navigate("/HealthProfessional");
     const goToSeeEvent = () => navigate("/Events");
 
-    const [testArray, setTestArray] = useState([]);
 
-    const addTestData = async () => {
-        const newItem = { id: testArray.length + 1, name: `Test Item ${testArray.length + 1}` };
-        const updatedArray = [...testArray, newItem]; // Add new item while keeping existing items
-        setTestArray(updatedArray);
-        console.log("Updated Array:", updatedArray);
 
-        // Send to backend without overwriting existing data
-        await axios.post("http://localhost:5000/addData", { newItem })
-            .then(response => {
-                setTestArray(response.data); // Update state with backend response
-                console.log("Full Data from Backend:", response.data);
-            })
-            .catch(error => console.error("Error sending data:", error));
-    };
-
-    const deleteTestData = async () => {
-        setTestArray([]);
-        console.log("Array cleared");
-
-        // Tell backend to delete all data
-        await axios.post("http://localhost:5000/deleteData")
-            .then(response => {
-                setTestArray(response.data);
-                console.log("Full Data from Backend after delete:", response.data);
-            })
-            .catch(error => console.error("Error deleting data:", error));
-    };
-
-    useEffect(() => {
-        const fetchAPI = async () => {
-            const response = await axios.get("http://localhost:5000/getData");
-            setTestArray(response.data);
-            console.log("Fetched Data:", response.data);
-        };
-        fetchAPI();
-    }, []);
+  
 
     return (
         <div className='home-page'>
@@ -58,8 +23,7 @@ function Home() {
                 <button onClick={goToFacility}>See Facilities</button>
                 <button onClick={goToHealthProfessional}>See Healthcare Professionals</button>
                 <button onClick={goToSeeEvent}>See Events</button>
-                <button onClick={addTestData}>Add Test Data</button>
-                <button onClick={deleteTestData}>Delete Test Data</button>
+        
             </div>
         </div>
     );
