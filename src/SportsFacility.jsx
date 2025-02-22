@@ -1,6 +1,6 @@
-import Button from "./Button.jsx";
-import { useNavigate } from "react-router-dom";   
-import './Fields.css'
+import { useNavigate } from "react-router-dom";
+import './Fields.css'; // Import the styles for the SportsFacility page
+
 function SportsFacility() {
     const navigate = useNavigate();
 
@@ -42,7 +42,6 @@ function SportsFacility() {
             <button className="home-button" onClick={goToHome}>Home</button>
 
             <div className="facility-list">
-                {/* Loop through the facilities and display each with a button */}
                 {facilities.map((facility, index) => (
                     <div key={index} className="facility-box">
                         <div className="facility-details">
