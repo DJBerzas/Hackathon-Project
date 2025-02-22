@@ -9,8 +9,18 @@ import Rooms from "./Rooms.jsx";
 import SportsFacility from "./SportsFacility.jsx";
 import Training from "./Training.jsx";
 import FormsPage from "./FormsPage.jsx";
+import {useState,useEffect} from "react";
+import axios from "axios"
 
 function App() {
+    const [count,setCount] = useState(0);
+    const fetchAPI = async () =>{
+        const response = await axios.get('http://localhost:5000/')
+        console.log(response.data.fruits)
+    };
+    useEffect (()=>{
+        fetchAPI();
+    });
     return (
         <Router>
             <Routes>
