@@ -11,9 +11,6 @@ import Rooms from "./Rooms.jsx";
 import SportsFacility from "./SportsFacility.jsx";
 import Training from "./Training.jsx";
 import FormsPage from "./FormsPage.jsx";
-import MentalHealth from "./MentalHealth.jsx";
-import Recovery  from "./Recovery.jsx";
-import PT from "./PT.jsx";
 
 
 function Home() {
@@ -43,6 +40,12 @@ function App() {
                 <Route path="/Facility" element={<Facility />} />
                 <Route path="/HealthProfessional" element={<HealthProfessional/>} />
                 <Route path="/SeeEvent" element={<SeeEvent/>} />
+                <Route path="/Training" element={<Training/>} />
+                <Route path="/CalandarAndTime" element={<CalandarAndTime/>} />
+                <Route path="/SportsFacility" element={<SportsFacility/>} />
+                <Route path="/Buildings" element={<Buildings/>} />
+                <Route path="/Rooms" element={<Rooms/>} />
+                <Route path="/FormsPage" element={<FormsPage/>} />
             </Routes>
         </Router>
     );
