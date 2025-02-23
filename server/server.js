@@ -32,22 +32,22 @@ let schedules = [
     {
         schedule: "PTSchedule",
         data: [
-            { month: 'September', day: 14, year: 2025, startTime: '09:00', endTime: '10:30', index: 7 },
-            { month: 'October', day: 3, year: 2024, startTime: '14:00', endTime: '16:00', index: 8 }
+            { month: 'September', day: 14, year: 2025, startTime: '09:00', endTime: '10:30', index: 2 },
+            { month: 'October', day: 3, year: 2024, startTime: '14:00', endTime: '16:00', index: 3 }
         ]
     },
     {
         schedule: "RecoverySchedule",
         data: [
-            { month: 'November', day: 20, year: 2025, startTime: '11:00', endTime: '12:45', index: 9 },
-            { month: 'December', day: 5, year: 2024, startTime: '13:15', endTime: '15:00', index: 10 }
+            { month: 'November', day: 20, year: 2025, startTime: '11:00', endTime: '12:45', index: 1 },
+            { month: 'December', day: 5, year: 2024, startTime: '13:15', endTime: '15:00', index: 4 }
         ]
     },
     {
         schedule: "MentalHealthSchedule",
         data: [
-            { month: 'January', day: 10, year: 2025, startTime: '10:00', endTime: '11:30', index: 11 },
-            { month: 'February', day: 22, year: 2024, startTime: '17:00', endTime: '18:30', index: 12 }
+            { month: 'January', day: 10, year: 2025, startTime: '10:00', endTime: '11:30', index: 1 },
+            { month: 'February', day: 22, year: 2024, startTime: '17:00', endTime: '18:30', index: 2 }
         ]
     }
 ];
