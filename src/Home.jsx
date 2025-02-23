@@ -9,7 +9,6 @@ function Home() {
     const goToFacility = () => navigate("/Facility");
     const goToHealthProfessional = () => navigate("/HealthProfessional");
     const goToSeeEvent = () => navigate("/Events");
-    const gtform = () => navigate("/FormsPage");
 
 
   
@@ -23,7 +22,6 @@ function Home() {
                 <button onClick={goToFacility} className="nav-button">See Facilities</button>
                 <button onClick={goToHealthProfessional}className="nav-button">See Healthcare Professionals</button>
                 <button onClick={goToSeeEvent}className="nav-button">See Events</button>
-                <button onClick={gtform}className="nav-button">TestForm</button>
         
             </div>
         </div>
