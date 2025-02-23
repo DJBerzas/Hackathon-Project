@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import './Fields.css';
 
-const BASE_URL = "http://localhost:5000"; // Change this if backend is deployed elsewhere
+const BASE_URL = "http://localhost:5000"; 
 
 function Buildings() {
     const navigate = useNavigate();
@@ -100,7 +100,7 @@ function Buildings() {
                     <button className="home-button" onClick={goToRooms}>Rooms</button>
                 </div>
 
-                {conflictMessage && (
+                {/* {conflictMessage && (
                     <div className="conflict-message" style={{ color: "red", fontWeight: "bold", marginBottom: "10px" }}>
                         {conflictMessage}
                     </div>
@@ -108,7 +108,7 @@ function Buildings() {
 
                 <p style={{ fontSize: "14px", color: "gray", marginBottom: "10px" }}>
                     Hidden Indexes: {hiddenIndexes.length > 0 ? hiddenIndexes.join(", ") : "None"}
-                </p>
+                </p> */}
 
                 <button className="fetch-button" onClick={fetchHiddenIndexes} style={{ marginBottom: "15px", padding: "10px" }}>
                     Check Availability

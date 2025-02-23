@@ -1,34 +1,29 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import './Training.css';
+import './Fields.css'; // Import the styles for the SportsFacility page
 
 const BASE_URL = "http://localhost:5000"; // Change this if backend is deployed elsewhere
 
-function Training() {
+function SportsFacility() {
     const navigate = useNavigate();
     const [hiddenIndexes, setHiddenIndexes] = useState([]);
     const [conflictMessage, setConflictMessage] = useState("");
 
-    const goToForms = (roomName) => {
-        navigate("/FormsPage", { state: { message: roomName } });
+    const goToForms = (facilityName) => {
+        navigate("/FormsPage", { state: { message: facilityName } });
     };
 
     const goToHome = () => {
         navigate("/", { state: { message: "Home" } });
     };
 
-    const trainingRooms = [
-        { index: 1, name: "Training Room 1", capacity: 20, location: "Main Campus", type: "Indoor", equipment: "Treadmills, Weights" },
-        { index: 2, name: "Training Room 2", capacity: 15, location: "North Campus", type: "Indoor", equipment: "Stationary Bikes, Weights" },
-        { index: 3, name: "Training Room 3", capacity: 30, location: "South Campus", type: "Indoor", equipment: "Free Weights, Machines" },
-        { index: 4, name: "Training Room 4", capacity: 25, location: "East Campus", type: "Indoor", equipment: "Cardio Machines, Weights" },
-        { index: 5, name: "Training Room 5", capacity: 20, location: "West Campus", type: "Indoor", equipment: "Stretching Area, Free Weights" },
-        { index: 6, name: "Training Room 6", capacity: 40, location: "Main Campus", type: "Indoor", equipment: "Full Gym Equipment" },
-        { index: 7, name: "Training Room 7", capacity: 10, location: "North Campus", type: "Indoor", equipment: "Yoga Mats, Weights" },
-        { index: 8, name: "Training Room 8", capacity: 50, location: "East Campus", type: "Indoor", equipment: "CrossFit Equipment" },
-        { index: 9, name: "Training Room 9", capacity: 35, location: "South Campus", type: "Indoor", equipment: "Cardio Machines, Free Weights" },
-        { index: 10, name: "Training Room 10", capacity: 25, location: "Main Campus", type: "Indoor", equipment: "Yoga Mats, Weights" },
+    const facilities = [
+        { index: 1, name: "Facility 1", capacity: 500, location: "Main Campus", type: "Indoor", equipment: "Gym, Pool" },
+        { index: 2, name: "Facility 2", capacity: 300, location: "North Campus", type: "Outdoor", equipment: "Track, Field" },
+        { index: 3, name: "Facility 3", capacity: 700, location: "South Campus", type: "Indoor", equipment: "Gym, Basketball Court" },
+        { index: 4, name: "Facility 4", capacity: 1000, location: "East Campus", type: "Outdoor", equipment: "Stadium" },
+        { index: 5, name: "Facility 5", capacity: 450, location: "West Campus", type: "Indoor", equipment: "Gym" }
     ];
 
     useEffect(() => {
@@ -46,7 +41,7 @@ function Training() {
                     setHiddenIndexes(numericIndexes);
 
                     if (numericIndexes.length > 0) {
-                        setConflictMessage(`Conflict detected! Training rooms with index ${numericIndexes.join(", ")} are unavailable.`);
+                        setConflictMessage(`Conflict detected! Facilities with index ${numericIndexes.join(", ")} are unavailable.`);
                     } else {
                         setConflictMessage("No conflicts detected.");
                     }
@@ -78,44 +73,43 @@ function Training() {
     };
 
     return (
-        <div className="training-container">
-            <div className="training-room">
-                <h1>Welcome to the Training Room Page</h1>
-                <button className="home-button" onClick={goToHome}>Home</button>
+        <div className="sports-facility">
+            <h1>Welcome to Sports Facility</h1>
+            <button className="home-button" onClick={goToHome}>Home</button>
 
-                {conflictMessage && (
-                    <div className="conflict-message" style={{ color: "red", fontWeight: "bold", marginBottom: "10px" }}>
-                        {conflictMessage}
-                    </div>
-                )}
-
-                <p style={{ fontSize: "14px", color: "gray", marginBottom: "10px" }}>
-                    Hidden Indexes: {hiddenIndexes.length > 0 ? hiddenIndexes.join(", ") : "None"}
-                </p>
-
-                <button className="fetch-button" onClick={fetchHiddenIndexes} style={{ marginBottom: "15px", padding: "10px" }}>
-                    Check Availability
-                </button>
-
-                <div className="room-list">
-                    {trainingRooms
-                        .filter(room => !hiddenIndexes.includes(room.index))
-                        .map((room) => (
-                            <div key={room.index} className="facility-box">
-                                <div className="room-details">
-                                    <span className="room-name">{room.name}</span>
-                                    <span className="room-capacity">Capacity: {room.capacity}</span>
-                                    <span className="room-location">Location: {room.location}</span>
-                                    <span className="room-type">Type: {room.type}</span>
-                                    <span className="room-equipment">Equipment: {room.equipment}</span>
-                                </div>
-                                <button className="form-button" onClick={() => goToForms(room.name)}>To Form</button>
-                            </div>
-                        ))}
+            {conflictMessage && (
+                <div className="conflict-message" style={{ color: "red", fontWeight: "bold", marginBottom: "10px" }}>
+                    {conflictMessage}
                 </div>
+            )}
+
+            <p style={{ fontSize: "14px", color: "gray", marginBottom: "10px" }}>
+                Hidden Indexes: {hiddenIndexes.length > 0 ? hiddenIndexes.join(", ") : "None"}
+            </p>
+
+            <button className="fetch-button" onClick={fetchHiddenIndexes} style={{ marginBottom: "15px", padding: "10px" }}>
+                Check Availability
+            </button>
+
+            <div className="facility-list">
+                {facilities
+                    .filter(facility => !hiddenIndexes.includes(facility.index))
+                    .map((facility) => (
+                        <div key={facility.index} className="facility-box">
+                            <div className="facility-details">
+                                <span className="facility-name">{facility.name}</span>
+                                <span className="facility-capacity">Capacity: {facility.capacity}</span>
+                                <span className="facility-location">Location: {facility.location}</span>
+                                <span className="facility-type">Type: {facility.type}</span>
+                                <span className="facility-equipment">Equipment: {facility.equipment}</span>
+                            </div>
+                            <button className="form-button" onClick={() => goToForms(facility.name)}>To Form</button>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     );
 }
 
-export default Training;
+export default SportsFacility;
