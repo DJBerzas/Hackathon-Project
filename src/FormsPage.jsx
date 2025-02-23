@@ -58,9 +58,6 @@ function FormsPage() {
             });
 
             const data = await response.json();
-            console.log(data.message);
-            alert("All stored dates have been cleared! Time has been reset.");
-
         } catch (error) {
             console.error("Error clearing input array:", error);
             alert("Failed to clear stored dates.");
