@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import './MentalHealth.css';
+import "./MentalHealth.css"; // Import the styles for the MentalHealth page
 
 const BASE_URL = "http://localhost:5000"; // Change this if backend is deployed elsewhere
 
@@ -9,14 +9,6 @@ function MentalHealth() {
     const navigate = useNavigate();
     const [hiddenIndexes, setHiddenIndexes] = useState([]);
     const [conflictMessage, setConflictMessage] = useState("");
-
-    const goToForms = (professionalName) => {
-        navigate("/FormsPage", { state: { message: professionalName } });
-    };
-
-    const goToHome = () => {
-        navigate("/");
-    };
 
     const mentalHealthProfessionals = [
         { index: 1, name: "Dr. Miller", specialty: "Counseling", location: "Main Campus", availability: "Mon-Fri 9am-5pm", method: "Talk Therapy, Cognitive Behavioral Therapy" },
@@ -40,7 +32,7 @@ function MentalHealth() {
                     setHiddenIndexes(numericIndexes);
 
                     if (numericIndexes.length > 0) {
-                        setConflictMessage(`Conflict detected! Professionals with index ${numericIndexes.join(", ")} are unavailable.`);
+                        setConflictMessage(`Conflict detected! Mental Health Professionals with index ${numericIndexes.join(", ")} are unavailable.`);
                     } else {
                         setConflictMessage("No conflicts detected.");
                     }
@@ -59,7 +51,7 @@ function MentalHealth() {
     const fetchHiddenIndexes = async () => {
         try {
             await axios.post(`${BASE_URL}/addDate`, {
-                date: { month: "February", day: 25, year: 2025, startTime: "10:00", endTime: "11:00" }
+                date: { month: "February", day: 25, year: 2025, startTime: "19:30", endTime: "20:30" }
             });
 
             const response = await axios.get(`${BASE_URL}/getDates`);
@@ -72,39 +64,46 @@ function MentalHealth() {
     };
 
     return (
-        <div className="mentalhealth-page">
-            <h1 className="mentalhealth-title">Welcome to Mental Health Services</h1>
-            <button className="mentalhealth-home-button" onClick={goToHome}>Home</button>
-
-            {conflictMessage && (
-                <div className="conflict-message" style={{ color: "red", fontWeight: "bold", marginBottom: "10px" }}>
-                    {conflictMessage}
+        <div className="mentalhealth-container">
+            <div className="mentalhealth-page">
+                <h1>Welcome to Mental Health Services</h1>
+                <div className="button-container">
+                    <button className="mentalhealth-home-button" onClick={() => navigate("/")}>Home</button>
                 </div>
-            )}
 
-            <p style={{ fontSize: "14px", color: "gray", marginBottom: "10px" }}>
-                Hidden Indexes: {hiddenIndexes.length > 0 ? hiddenIndexes.join(", ") : "None"}
-            </p>
+                {conflictMessage && (
+                    <div className="conflict-message" style={{ color: "red", fontWeight: "bold", marginBottom: "10px" }}>
+                        {conflictMessage}
+                    </div>
+                )}
 
-            <button className="fetch-button" onClick={fetchHiddenIndexes} style={{ marginBottom: "15px", padding: "10px" }}>
-                Check Availability
-            </button>
+                <p style={{ fontSize: "14px", color: "gray", marginBottom: "10px" }}>
+                    Hidden Indexes: {hiddenIndexes.length > 0 ? hiddenIndexes.join(", ") : "None"}
+                </p>
 
-            <div className="mentalhealth-list">
-                {mentalHealthProfessionals
-                    .filter(professional => !hiddenIndexes.includes(professional.index))
-                    .map((professional) => (
-                        <div key={professional.index} className="mentalhealth-box">
-                            <div className="mentalhealth-details">
-                                <span className="professional-name">{professional.name}</span>
-                                <span className="professional-specialty">Specialty: {professional.specialty}</span>
-                                <span className="professional-location">Location: {professional.location}</span>
-                                <span className="professional-availability">Availability: {professional.availability}</span>
-                                <span className="professional-method">Therapy Method: {professional.method}</span>
+                <button className="fetch-button" onClick={fetchHiddenIndexes} style={{ marginBottom: "15px", padding: "10px" }}>
+                    Check Availability
+                </button>
+
+                <div className="mentalhealth-list">
+                    {mentalHealthProfessionals
+                        .filter(professional => !hiddenIndexes.includes(professional.index))
+                        .map((professional) => (
+                            <div key={professional.index} className="mentalhealth-box">
+                                <div className="mentalhealth-details">
+                                    <span className="professional-name">{professional.name}</span>
+                                    <span className="professional-specialty">Specialty: {professional.specialty}</span>
+                                    <span className="professional-location">Location: {professional.location}</span>
+                                    <span className="professional-availability">Availability: {professional.availability}</span>
+                                    <span className="professional-method">Therapy Method: {professional.method}</span>
+                                </div>
+                                <button className="form-button" onClick={() => navigate("/FormsPage", { state: { message: professional.name } })}>
+                                    To Form
+                                </button>
                             </div>
-                            <button className="form-button" onClick={() => goToForms(professional.name)}>To Form</button>
-                        </div>
-                    ))}
+                        ))
+                    }
+                </div>
             </div>
         </div>
     );

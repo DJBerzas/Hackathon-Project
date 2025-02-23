@@ -34,28 +34,55 @@ function FormsPage() {
         }));
     };
 
-    // Handles form submission
+    // Function to clear stored dates in backend
+    const clearInputArray = async () => {
+        try {
+            const response = await fetch("http://localhost:5000/clearDates", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+
+            const data = await response.json();
+            console.log(data.message);
+            alert("All stored dates have been cleared! Time has been reset.");
+
+        } catch (error) {
+            console.error("Error clearing input array:", error);
+            alert("Failed to clear stored dates.");
+        }
+    };
+
+    // Handles form submission and clears stored dates
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Final Event Data:", event); // Log the event data
+        console.log("Final Event Data:", event);
 
-        // Send the event data to the backend
-        fetch("http://localhost:5000/addEvent", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(event) // Convert the event object to JSON and send it in the request body
-        })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log("Event added successfully:", data); // Log the response from the backend
+        try {
+            const response = await fetch("http://localhost:5000/addEvent", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(event)
+            });
+
+            if (!response.ok) {
+                throw new Error("Failed to submit event.");
+            }
+
+            const data = await response.json();
+            console.log("Event added successfully:", data);
             alert("Event details saved successfully!");
-        })
-        .catch((error) => {
+
+            // ✅ Call function to clear stored dates after submission
+            await clearInputArray();
+
+        } catch (error) {
             console.error("Error adding event:", error);
             alert("There was an error saving the event.");
-        });
+        }
     };
 
     return (

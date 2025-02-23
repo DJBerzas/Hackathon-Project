@@ -138,52 +138,47 @@ app.post("/addDate", (req, res) => {
 
 // Endpoint to get all conflicting indexes for added dates
 app.get("/getDates", (req, res) => {
-    let hiddenIndexes = [];
-
     if (inputDate.length === 0) {
-        console.warn("⚠️ No dates in inputDate, using default date for testing.");
-
-        // Simulating a default date for testing
-        const today = new Date();
-        const defaultDate = {
-            month: today.toLocaleString('default', { month: 'long' }),
-            day: today.getDate(),
-            year: today.getFullYear(),
-            startTime: "08:00",
-            endTime: "09:00" // Example time for testing
-        };
-
-        inputDate.push({ date: defaultDate });
+        return res.json([]);
     }
 
-    inputDate.forEach(input => {
-        schedules.forEach(schedule => {
-            schedule.data.forEach(item => {
-                const itemStart = convertTimeToMinutes(item.startTime);
-                const itemEnd = convertTimeToMinutes(item.endTime);
-                const inputStart = convertTimeToMinutes(input.date.startTime);
-                const inputEnd = convertTimeToMinutes(input.date.endTime);
+    let latestDate = inputDate[inputDate.length - 1]; // Get the latest requested date
+    let hiddenIndexes = [];
 
-                if (
-                    item.month === input.date.month &&
-                    Number(item.day) === Number(input.date.day) &&
-                    Number(item.year) === Number(input.date.year) &&
-                    (
-                        (inputStart >= itemStart && inputStart < itemEnd) ||  // Overlap at start
-                        (inputEnd > itemStart && inputEnd <= itemEnd) ||      // Overlap at end
-                        (inputStart <= itemStart && inputEnd >= itemEnd)      // Full overlap
-                    )
-                ) {
-                    hiddenIndexes.push(item.index);
-                }
-            });
+    schedules.forEach(schedule => {
+        schedule.data.forEach(item => {
+            const itemStart = convertTimeToMinutes(item.startTime);
+            const itemEnd = convertTimeToMinutes(item.endTime);
+            const inputStart = convertTimeToMinutes(latestDate.date.startTime);
+            const inputEnd = convertTimeToMinutes(latestDate.date.endTime);
+
+            if (
+                item.month === latestDate.date.month &&
+                Number(item.day) === Number(latestDate.date.day) &&
+                Number(item.year) === Number(latestDate.date.year) &&
+                (
+                    (inputStart >= itemStart && inputStart < itemEnd) ||  // Overlap at start
+                    (inputEnd > itemStart && inputEnd <= itemEnd) ||      // Overlap at end
+                    (inputStart <= itemStart && inputEnd >= itemEnd)      // Full overlap
+                )
+            ) {
+                hiddenIndexes.push(item.index);
+            }
         });
     });
 
-    console.log("Returning Hidden Indexes:", hiddenIndexes);
+    console.log("Returning Hidden Indexes for Latest Request:", hiddenIndexes);
     res.json(hiddenIndexes);
 });
 
+
 app.listen(5000, () => {
     console.log("Server running on port 5000");
+});
+
+
+app.post("/clearDates", (req, res) => {
+    inputDate = []; // Reset the array
+    console.log("✅ inputDate has been cleared!");
+    res.json({ message: "All stored dates have been cleared." });
 });
