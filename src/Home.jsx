@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./Home.css"; // Only import this for the Home page
+import "./Home.css"; 
 
 function Home() {
     const navigate = useNavigate();

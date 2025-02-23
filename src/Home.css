@@ -1,11 +1,11 @@
-/* Home Page Styles */
+
 html, body {
-    height: 100%;  /* Make sure the page takes full height */
+    height: 100%; 
     margin: 0;
 }
 
 .home-page {
-    height: 100vh;  /* Use the full viewport height */
+    height: 100vh;  
     margin: 0;
     background-color: #232A2E; 
     color: #D3C6AA; 
@@ -20,44 +20,44 @@ html, body {
     background-attachment: fixed;
 }
 
-/* Home Container */
+
 .home-container {
     text-align: center;
     padding: 50px;
-    background-color: rgba(45, 53, 59, 0.6); /* Transparent background */
+    background-color: rgba(45, 53, 59, 0.6); 
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     width: 90%;
-    max-width: 500px; /* Reduced width for a centered layout */
+    max-width: 500px; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px; /* More spacing between elements */
+    gap: 40px; 
 }
 
-/* Title */
+
 .home-title {
     font-size: 26px;
-    color: #DBBC7F; /* Warm yellowish text */
+    color: #DBBC7F; 
     margin-bottom: 10px;
 }
 
-/* Navigation Buttons */
+
 .nav-button {
-    background-color: #3D484D; /* Dark grey */
+    background-color: #3D484D; 
     color: #D3C6AA;
-    padding: 18px 35px; /* Adjusted padding */
+    padding: 18px 35px; 
     border: none;
-    border-radius: 30px; /* Rounder buttons */
+    border-radius: 30px; 
     cursor: pointer;
     font-size: 18px;
-    width: 85%; /* Slightly wider */
-    max-width: 320px; /* Ensures buttons don't stretch too wide */
+    width: 85%; 
+    max-width: 320px; 
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin: 10px 0; /* More spacing between buttons */
+    margin: 10px 0;
 }
 
 .nav-button:hover {
-    background-color: #4D4C43; /* Slightly lighter on hover */
+    background-color: #4D4C43; 
     transform: scale(1.08);
 }

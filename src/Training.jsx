@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import './Training.css';
 
-const BASE_URL = "http://localhost:5000"; // Change this if backend is deployed elsewhere
+const BASE_URL = "http://localhost:5000";
 
 function Training() {
     const navigate = useNavigate();

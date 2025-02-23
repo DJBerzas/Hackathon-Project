@@ -4,12 +4,12 @@ import "./Forms.css";
 import { useNavigate, useLocation } from "react-router-dom";
 
 function FormsPage() {
-    const location = useLocation(); // Make sure to call useLocation to get the location
-    const message = location.state?.message || "No data received"; // Extract the message from the location state
+    const location = useLocation(); 
+    const message = location.state?.message || "No data received"; 
 
     const [activeTab, setActiveTab] = useState(null);
 
-    // Event object to store form data
+
     const [event, setEvent] = useState({
         event_at: { event_at: "" },
         security: { personnel: "", contact: "" },
@@ -20,23 +20,23 @@ function FormsPage() {
         other: { notes: "" }
     });
 
-    // Set the event_at field once the component mounts
+
     useEffect(() => {
         setEvent((prevEvent) => ({
             ...prevEvent,
-            event_at: { event_at: message } // Update the event_at field with the message
+            event_at: { event_at: message } 
         }));
-    }, [message]); // This effect runs only when the message changes
+    }, [message]); 
 
-    // Handles switching between tabs
+    
     const handleTabClick = (tab) => {
-        setActiveTab(tab === activeTab ? null : tab); // Toggle tab on click
+        setActiveTab(tab === activeTab ? null : tab); 
     };
 
-    // Handles input changes and updates the event object
+   
     const handleInputChange = (event) => {
         const { name, value, dataset } = event.target;
-        const category = dataset.category; // Gets the category (security, health, etc.)
+        const category = dataset.category; 
 
         setEvent((prevEvent) => ({
             ...prevEvent,
@@ -47,7 +47,7 @@ function FormsPage() {
         }));
     };
 
-    // Function to clear stored dates in backend
+
     const clearInputArray = async () => {
         try {
             const response = await fetch("http://localhost:5000/clearDates", {
@@ -67,7 +67,7 @@ function FormsPage() {
         }
     };
 
-    // Handles form submission and clears stored dates
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log("Final Event Data:", event);
@@ -89,7 +89,7 @@ function FormsPage() {
             console.log("Event added successfully:", data);
             alert("Event details saved successfully!");
 
-            // ✅ Call function to clear stored dates after submission
+
             await clearInputArray();
 
         } catch (error) {
@@ -104,7 +104,7 @@ function FormsPage() {
             <Button name="Go to Home" to="/" />
 
             <div className="forms-container">
-                {/* Sidebar for categories */}
+
                 <div className="sidebar">
                     <ul>
                         <li onClick={() => handleTabClick("security")}>Security</li>
@@ -117,7 +117,7 @@ function FormsPage() {
                     </ul>
                 </div>
 
-                {/* Form Fields Section */}
+
                 <div className="form-fields">
                     <form onSubmit={handleSubmit}>
                         {activeTab === "security" && (
@@ -192,7 +192,7 @@ function FormsPage() {
                             </div>
                         )}
 
-                        {/* Finalize Tab: Displays all stored values */}
+                 
                         {activeTab === "finalize" && (
                             <div className="form-section">
                                 <h3>Finalize Event Details</h3>

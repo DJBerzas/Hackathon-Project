@@ -1,27 +1,27 @@
-/* General Styles */
+
 .training-container {
     height: 100%;
     margin: 0;
-    background-color: #232A2E; /* Dimmed background */
-    color: #D3C6AA; /* Default foreground */
+    background-color: #232A2E; 
+    color: #D3C6AA;
 }
 
 .training-room {
     font-family: Arial, sans-serif;
     padding: 20px;
-    background-color: #2D353B; /* Default background */
-    color: #D3C6AA; /* Default foreground */
+    background-color: #2D353B;
+    color: #D3C6AA; 
     text-align: center;
 }
 
 h1 {
-    color: #DBBC7F; /* Light gray-yellow for the heading */
+    color: #DBBC7F; 
 }
 
-/* Home Button */
+
 .home-button {
-    background-color: #343F44; /* Darker gray for the button */
-    color: #D3C6AA; /* Default foreground */
+    background-color: #343F44; 
+    color: #D3C6AA; 
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -31,10 +31,10 @@ h1 {
 }
 
 .home-button:hover {
-    background-color: #4D4C43; /* Slightly darker gray for hover */
+    background-color: #4D4C43; 
 }
 
-/* Room List */
+
 .room-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -43,13 +43,13 @@ h1 {
     list-style-type: none;
 }
 
-/* Room Card */
+
 .room-card {
-    background-color: #343F44; /* Dark gray background */
-    border: 1px solid #4F585E; /* Lighter gray border */
+    background-color: #343F44; 
+    border: 1px solid #4F585E; 
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -61,7 +61,7 @@ h1 {
     transform: scale(1.05);
 }
 
-/* Room Details */
+
 .room-details {
     margin-bottom: 20px;
     text-align: left;
@@ -71,25 +71,25 @@ h1 {
 .room-name {
     font-size: 18px;
     font-weight: bold;
-    color: #D3C6AA; /* Default foreground for the name */
+    color: #D3C6AA; 
     margin-bottom: 10px;
 }
 
-/* Ensure each field is on a new line */
+
 .room-capacity,
 .room-location,
 .room-type,
 .room-equipment {
     font-size: 14px;
-    color: #859289; /* Comments and punctuation delimiters color */
+    color: #859289; 
     margin-top: 5px;
-    display: block; /* Force these to appear on new lines */
+    display: block; 
 }
 
 /* Form Button */
 .form-button {
-    background-color: #475258; /* Button background */
-    color: #D3C6AA; /* Default foreground */
+    background-color: #475258; 
+    color: #D3C6AA; 
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
@@ -99,5 +99,5 @@ h1 {
 }
 
 .form-button:hover {
-    background-color: #4F585E; /* Slightly darker gray on hover */
+    background-color: #4F585E; 
 }

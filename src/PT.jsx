@@ -1,17 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./PT.css"; // Import the styles for the PT page
+import "./PT.css"; 
 
-const BASE_URL = "http://localhost:5000"; // Change this if backend is deployed
+const BASE_URL = "http://localhost:5000";
 
 function PT() {
     const navigate = useNavigate();
     const [hiddenIndexes, setHiddenIndexes] = useState([]);
     const [conflictMessage, setConflictMessage] = useState("");
 
-    const title = "Welcome to Physical Therapy"; // Define title
-    const formPage = "/FormsPage"; // Define form page path
+    const title = "Welcome to Physical Therapy"; 
+    const formPage = "/FormsPage";
 
     const professionals = [
         { index: 1, name: "Dr. Smith", specialty: "Sports Therapy", location: "Main Campus", availability: "Mon-Fri 9am-5pm", equipment: "Massage Table, TENS Unit" },
@@ -21,7 +21,7 @@ function PT() {
         { index: 5, name: "Dr. Davis", specialty: "Neurological Therapy", location: "West Campus", availability: "Mon-Fri 10am-6pm", equipment: "Balance Boards, Sensory Tools" },
     ];
 
-    // Fetch unavailable professionals from backend
+ 
     useEffect(() => {
         axios.get(`${BASE_URL}/getDates`)
             .then(response => {

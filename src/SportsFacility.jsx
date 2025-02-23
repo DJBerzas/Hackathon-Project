@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import './Fields.css'; // Import the styles for the SportsFacility page
+import './Fields.css'; 
 
 function SportsFacility() {
     const navigate = useNavigate();
@@ -12,7 +12,7 @@ function SportsFacility() {
         navigate("/", { state: { message: "Home" } });
     };
 
-    // Array of facilities with detailed information
+
     const facilities = [
         { name: "Facility 1", capacity: 500, location: "Main Campus", type: "Indoor", equipment: "Gym, Pool" },
         { name: "Facility 2", capacity: 300, location: "North Campus", type: "Outdoor", equipment: "Track, Field" },

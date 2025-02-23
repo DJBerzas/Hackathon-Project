@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./HealthProfessional.css";  // Import styles for this page
+import "./HealthProfessional.css";  
 
 function HealthProfessional() {
     const navigate = useNavigate();

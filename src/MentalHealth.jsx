@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./MentalHealth.css"; // Import the styles for the MentalHealth page
+import "./MentalHealth.css"; 
 
-const BASE_URL = "http://localhost:5000"; // Change this if backend is deployed elsewhere
+const BASE_URL = "http://localhost:5000"; 
 
 function MentalHealth() {
     const navigate = useNavigate();
