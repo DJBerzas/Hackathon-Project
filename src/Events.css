@@ -24,12 +24,11 @@ html, body {
 .events-home-button {
     background-color: #343F44; /* Darker gray for the button */
     color: #D3C6AA; /* Default foreground */
-    padding: 10px 10px;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-bottom: 10px;
-    margin-top: -20px; /* Increased negative margin to raise the button further */
+    margin-bottom: 20px;
     font-size: 16px;
 }
 
