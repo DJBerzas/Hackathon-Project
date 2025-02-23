@@ -11,7 +11,7 @@ function Training() {
     const [conflictMessage, setConflictMessage] = useState("");
 
     const goToForms = (roomName) => {
-        navigate("/TrainingRoomForm", { state: { message: roomName } });
+        navigate("/FormsPage", { state: { message: roomName } });
     };
 
     const goToHome = () => {

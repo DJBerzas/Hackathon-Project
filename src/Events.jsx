@@ -39,6 +39,9 @@ function Events() {
                         events.map((event) => (
                             <div key={event.id} className="event-box">
                                 <div className="event-details">
+                                    <h3 className ="event-category">Event</h3>
+                                    <p className="event-item">Contact: {event.event_at.event_at}</p>
+                                    
                                     <h3 className="event-category">Security</h3>
                                     <p className="event-item">Personnel: {event.security.personnel}</p>
                                     <p className="event-item">Contact: {event.security.contact}</p>

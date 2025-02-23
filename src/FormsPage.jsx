@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "./Button.jsx";
 import "./Forms.css";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function FormsPage() {
+    const location = useLocation(); // Make sure to call useLocation to get the location
+    const message = location.state?.message || "No data received"; // Extract the message from the location state
+
     const [activeTab, setActiveTab] = useState(null);
 
     // Event object to store form data
     const [event, setEvent] = useState({
+        event_at: { event_at: "" },
         security: { personnel: "", contact: "" },
         health: { professionals: "", contact: "" },
         equipment: { needed: "", quantity: "" },
@@ -14,6 +19,14 @@ function FormsPage() {
         food: { type: "", quantity: "" },
         other: { notes: "" }
     });
+
+    // Set the event_at field once the component mounts
+    useEffect(() => {
+        setEvent((prevEvent) => ({
+            ...prevEvent,
+            event_at: { event_at: message } // Update the event_at field with the message
+        }));
+    }, [message]); // This effect runs only when the message changes
 
     // Handles switching between tabs
     const handleTabClick = (tab) => {
@@ -156,6 +169,7 @@ function FormsPage() {
                         {activeTab === "finalize" && (
                             <div className="form-section">
                                 <h3>Finalize Event Details</h3>
+                                <p><strong>Event:</strong> {event.event_at.event_at} personnel, Contact: {event.security.contact}</p>
                                 <p><strong>Security:</strong> {event.security.personnel} personnel, Contact: {event.security.contact}</p>
                                 <p><strong>Health Professionals:</strong> {event.health.professionals}, Contact: {event.health.contact}</p>
                                 <p><strong>Equipment:</strong> {event.equipment.needed} (Quantity: {event.equipment.quantity})</p>

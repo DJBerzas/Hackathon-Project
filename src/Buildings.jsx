@@ -19,7 +19,7 @@ function Buildings() {
     };
 
     const goToForms = (buildingName) => {
-        navigate("/BuildingForm", { state: { message: buildingName } });
+        navigate("/FormsPage", { state: { message: buildingName } });
     };
 
     const buildings = [
