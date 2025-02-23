@@ -22,6 +22,7 @@ function CalandarAndTime() {
             default: return "/SportsFacility";
         }
     }
+    
 
     const handleButtonClick = () => {
         navigate(switcher(message));
@@ -31,15 +32,16 @@ function CalandarAndTime() {
         navigate("/");
     };
 
-    // 🛠 Handle Date Submission
     const handleDateSubmit = async () => {
         if (!selectedDate || !startTime || !endTime) {
             alert("⚠️ Please select a date, start time, and end time before submitting.");
             return;
         }
-
-        // Convert selected date into { month, day, year } object
+    
+        // Convert selected date into a Date object and add one day
         const dateObject = new Date(selectedDate);
+        dateObject.setDate(dateObject.getDate() + 1); // Add 1 day
+    
         const formattedDate = {
             month: dateObject.toLocaleString('default', { month: 'long' }),
             day: dateObject.getDate(),
@@ -47,14 +49,16 @@ function CalandarAndTime() {
             startTime: startTime, // ✅ Add start time
             endTime: endTime // ✅ Add end time
         };
-
+    
         try {
             const response = await fetch("http://localhost:5000/addDate", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ date: formattedDate })
             });
-
+    
+            if (!response.ok) throw new Error(`Server Error: ${response.statusText}`);
+    
             const data = await response.json();
             setLatestDate(formattedDate); // ✅ Store only the last submitted date
             setSubmitted(true); // ✅ Show "Continue" button
@@ -63,6 +67,7 @@ function CalandarAndTime() {
             console.error("Error submitting date:", error);
         }
     };
+    
 
     return (
         <div>
