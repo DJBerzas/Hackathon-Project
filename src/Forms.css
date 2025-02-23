@@ -1,0 +1,117 @@
+/* Styles for FormsPage */
+.forms-page {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #232A2E;
+    color: #D3C6AA;
+    text-align: center;
+}
+
+/* Top buttons container */
+.top-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* More spacing between buttons and form */
+}
+
+.forms-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px; /* Spacing between buttons and form */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 25%; /* Increased width */
+    background-color: #343F44;
+    padding: 20px; /* More padding */
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-right: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 15px; /* More padding for better clickability */
+    cursor: pointer;
+    color: #D3C6AA;
+    font-size: 20px; /* Slightly bigger font */
+    border-bottom: 1px solid #4F585E;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar li:hover {
+    background-color: #4F585E;
+    transform: scale(1.05);
+}
+
+/* Form Fields Styling */
+.form-fields {
+    width: 70%; /* Increased width */
+    background-color: #343F44;
+    padding: 30px; /* More padding */
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.form-section {
+    margin-bottom: 30px;
+}
+
+.form-section h3 {
+    font-size: 26px; /* Bigger headers */
+    color: #DBBC7F;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 18px; /* Bigger font for readability */
+    color: #D3C6AA;
+}
+
+/* Longer Input Fields */
+input, textarea {
+    width: 95%; /* Wider input fields */
+    padding: 14px; /* More padding */
+    margin-bottom: 25px; /* More spacing */
+    background-color: #2D353B;
+    color: #D3C6AA;
+    border: 1px solid #4F585E;
+    border-radius: 5px;
+    font-size: 18px; /* Bigger text */
+}
+
+/* Special Inputs */
+input[type="number"], input[type="time"] {
+    width: 60%; /* Wider number and time inputs */
+}
+
+textarea {
+    resize: vertical;
+    height: 200px; /* Taller textareas */
+}
+
+/* Button Styling */
+button {
+    padding: 14px 24px;
+    background-color: #475258;
+    color: #D3C6AA;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #4F585E;
+    transform: scale(1.05);
+}

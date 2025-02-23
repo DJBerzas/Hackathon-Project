@@ -14,6 +14,7 @@ import axios from "axios"
 import PT from "./PT.jsx";
 import Recovery from './Recovery.jsx'
 import MentalHealth from './MentalHealth.jsx'
+import Events from './Events.jsx'
 
 function App() {
    
@@ -34,6 +35,7 @@ function App() {
                 <Route path="/Recovery" element={<Recovery/>} />
                 <Route path="/MentalHealth" element={<MentalHealth/>} />
                 <Route path="/FormsPage" element={<FormsPage />} />
+                <Route path="/Events" element={<Events/>} />
             </Routes>
         </Router>
     );
